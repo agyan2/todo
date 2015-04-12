@@ -1,7 +1,7 @@
 {
-  "name": "rmtang",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample app to try out local node development\r dependent on mongo",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.12.2",
@@ -15,6 +15,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "agyan2",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agyan2/todo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agyan2/todo/issues"
+  },
+  "homepage": "https://github.com/agyan2/todo"
 }

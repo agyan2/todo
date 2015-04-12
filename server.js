@@ -9,6 +9,8 @@
     var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var mongoose = require('mongoose');
+    var swagger = require('swagger-express');
+   
 
 // configuration =================
 
@@ -21,15 +23,26 @@
     app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     app.use(methodOverride());
 
+
+
     
 //Configure routes
+ app.use(swagger.init(app, {
+    apiVersion: '1.0',
+    swaggerVersion: '1.0',
+    swaggerURL: '/swagger',
+    swaggerJSON: '/api-docs.json',
+    swaggerUI: './public/swagger/',
+    basePath: 'http://localhost:8080',
+    apis: ['./api.js'],
+    middleware: function(req, res){}
+  }));
+ 
 	app.use(require('./api'));
 	app.use(require('./web'));
 
 
-
-
-
+ 
 
     // listen (start app with node server.js) ======================================
     app.listen(8080);
