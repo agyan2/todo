@@ -10,6 +10,7 @@
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var mongoose = require('mongoose');
     var swagger = require('swagger-express');
+
    
 
 // configuration =================
@@ -22,6 +23,7 @@
     app.use(bodyParser.json());                                     // parse application/json
     app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     app.use(methodOverride());
+
 
 
 
